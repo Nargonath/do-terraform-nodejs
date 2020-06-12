@@ -4,3 +4,16 @@
 </div>
 
 <hr>
+
+# Setup
+
+This terraform configuration requires multiples variables files for which you can find examples in the repository:
+
+- `secrets.tfvars`
+- `ssh_keys.tfvars`
+
+You need to copy-paste the examples, remove the `.example` in the name of the file and fill them up with your real data.
+
+# Create the infrastructure
+
+You can create the infrastructure with `terraform apply -var-file="secrets.tfvars" -var-file="ssh_keys.tfvars"`

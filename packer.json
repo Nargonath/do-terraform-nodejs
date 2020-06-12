@@ -1,0 +1,21 @@
+{
+  "variables": {
+    "do_token": "",
+    "region": "fra1",
+    "size": ""
+  },
+  "builders": [
+    {
+      "type": "digitalocean",
+      "api_token": "{{ user `do_token` }}",
+      "image": "docker-18-04",
+      "region": "{{ user `region` }}",
+      "size": "{{ user `size` }}",
+      "droplet_name": "packer-docker-provisioned",
+      "monitoring": true,
+      "snapshot_name": "packer-docker-{{ isotime \"02-01-2006_15-04-05\" }}",
+      "snapshot_regions": ["{{ user `region` }}"],
+      "ssh_username": "root"
+    }
+  ]
+}

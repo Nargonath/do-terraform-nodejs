@@ -19,10 +19,17 @@ resource "digitalocean_project" "do_terraform_nodejs" {
   resources = [module.nodejs_server.urn]
 }
 
+data "digitalocean_droplet_snapshot" "docker_snapshot" {
+  name_regex  = "^packer-docker"
+  region      = var.do_region
+  most_recent = true
+}
+
 module "nodejs_server" {
   source = "./modules/nodejs-server"
 
   droplet_name = "test-terraform-nodejs-server"
+  image        = data.digitalocean_droplet_snapshot.docker_snapshot.id
   region       = var.do_region
   droplet_size = "s-1vcpu-1gb"
 

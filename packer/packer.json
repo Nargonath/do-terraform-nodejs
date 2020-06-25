@@ -19,5 +19,19 @@
       "snapshot_regions": ["{{ user `region` }}"],
       "ssh_username": "root"
     }
+  ],
+  "provisioners": [
+    {
+      "type": "file",
+      "source": "cloudinit-users.sh",
+      "destination": "/tmp/cloudinit-users.sh"
+    },
+    {
+      "type": "shell",
+      "inline": [
+        "mv /tmp/cloudinit-users.sh /var/lib/cloud/scripts/per-instance/",
+        "chmod +x /var/lib/cloud/scripts/per-instance/cloudinit-users.sh"
+      ]
+    }
   ]
 }

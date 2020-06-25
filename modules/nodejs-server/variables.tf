@@ -17,3 +17,8 @@ variable "ssh_keys" {
   type        = list(string)
   description = "List of SSH keys fingerprints to add to the droplet"
 }
+
+variable "image" {
+  type        = string
+  description = "Image to use for the droplet"
+}

@@ -13,6 +13,7 @@
       "size": "{{ user `size` }}",
       "droplet_name": "packer-docker-provisioned",
       "monitoring": true,
+      "private_networking": true,
       "snapshot_name": "packer-docker-{{ isotime \"02-01-2006_15-04-05\" }}",
       "snapshot_regions": ["{{ user `region` }}"],
       "ssh_username": "root"

@@ -1,4 +1,9 @@
 users_ssh_keys = {
-  user1 = "path/to/the/public/key"
-  user2 = "path/to/the/public/key"
+  user1 = <<-EOT
+    the-key
+  EOT
+
+  user2 = <<-EOT
+    the-second-key
+  EOT
 }

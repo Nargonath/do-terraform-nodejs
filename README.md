@@ -36,3 +36,7 @@ You need to copy-paste the examples, remove the `.example` in the name of the fi
 # Create the infrastructure
 
 You can create the infrastructure with `terraform apply -var-file="secrets.tfvars" -var-file="ssh_keys.tfvars"`
+
+# Resources
+
+This article gives guidelines to improve terraform usage: https://cloudskiff.com/terraform-code-quality/?utm_source=Slack&utm_medium=TerraformCodeQuality.

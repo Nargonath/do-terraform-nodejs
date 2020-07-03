@@ -1,1 +1,1 @@
-do_token="my-secret-token"
+do_token = "my-secret-token"

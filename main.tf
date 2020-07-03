@@ -7,7 +7,7 @@ resource "digitalocean_ssh_key" "default" {
   for_each = var.users_ssh_keys
 
   name       = "SSH key for ${each.key}"
-  public_key = file("${each.value}")
+  public_key = "${each.value}"
 }
 
 resource "digitalocean_project" "do_terraform_nodejs" {

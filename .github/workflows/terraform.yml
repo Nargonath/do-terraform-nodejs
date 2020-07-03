@@ -18,6 +18,9 @@ jobs:
       - name: Terraform init
         run: terraform init
 
+      - name: Terraform format
+        run: terraform fmt -check
+
       - name: Terraform validate
         env:
           TF_VAR_do_token: ${{ secrets.DO_TOKEN }}

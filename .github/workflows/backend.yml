@@ -1,0 +1,25 @@
+name: Backend
+
+on: [push]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Inject slug variables
+        uses: rlespinasse/github-slug-action@v2.x
+
+      - name: Docker build
+        run: |
+          docker build \
+            -f server/Dockerfile \
+            -t "$GITHUB_REPOSITORY_SLUG:latest" \
+            .

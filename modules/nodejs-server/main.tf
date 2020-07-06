@@ -4,6 +4,8 @@ resource "digitalocean_droplet" "node_server" {
   image  = var.image
   size   = var.droplet_size
 
-  monitoring = true
-  ssh_keys   = var.ssh_keys
+  monitoring         = true
+  ipv6               = true
+  private_networking = true
+  ssh_keys           = var.ssh_keys
 }
